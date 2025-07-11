@@ -1,0 +1,150 @@
+/* Custom styles for the dark chess theme */
+body {
+    font-family: 'Lora', serif;
+    /* Darker wood texture background */
+    background-color: #2a1f18; /* Very Dark Walnut fallback */
+    background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239C6644' fill-opacity='0.04'%3E%3Cpath d='M50 50h10v10H50zM10 10h10v10H10z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+h1, h2, h3, h4, .font-cinzel {
+    font-family: 'Cinzel', serif;
+}
+
+/* New "Liquid Glass" Panel Style */
+.glass-panel {
+    /* Brown tinted glass effect */
+    background: rgba(74, 56, 42, 0.25); /* Brownish tint */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px); /* For Safari */
+    border: 1px solid rgba(234, 224, 213, 0.2); /* Faint edge highlight */
+    color: #EAE0D5; /* Off-white for text */
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+/* New "Liquid Glass" Button Style */
+.btn-glass {
+    background: rgba(128, 74, 46, 0.5); /* Stronger brown tint for buttons */
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    color: #fff;
+    transition: all 0.2s ease-in-out;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-glass:hover {
+    background: rgba(158, 92, 58, 0.7); /* Lighter on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+/* Update form inputs for the new theme */
+#contact-form input, #contact-form textarea {
+    transition: background-color 0.3s ease;
+    border-radius: 0.375rem; /* same as rounded-md */
+}
+
+
+/* Sticky registration button style */
+#sticky-register-container {
+    transition: opacity 0.5s, transform 0.5s;
+    opacity: 0;
+    transform: translateY(100%);
+}
+
+#sticky-register-container.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Simple modal for form submission feedback */
+#feedback-modal {
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* --- Vertical Timeline Styles (Icons Removed) --- */
+.timeline-container {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* The vertical line */
+.timeline-container::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background-color: #D4AF37;
+    opacity: 0.4;
+    top: 10px;
+    bottom: 10px;
+    left: 50%;
+    margin-left: -2px;
+}
+
+.timeline-item {
+    padding: 10px 40px;
+    position: relative;
+    width: 50%;
+}
+
+.timeline-item:nth-child(odd) {
+    left: 0;
+    text-align: right;
+}
+
+.timeline-item:nth-child(even) {
+    left: 50%;
+    text-align: left;
+}
+
+/* The circle on the timeline */
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    right: -12px;
+    background-color: #2a1f18; /* Match the body background for a "pierced" look */
+    border: 4px solid #D4AF37;
+    top: 20px; /* Adjusted position after removing icon */
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.timeline-item:nth-child(even)::after {
+    left: -12px;
+}
+
+.timeline-content {
+    padding: 20px 30px;
+    position: relative;
+    background: rgba(0,0,0,0.2);
+    border-radius: 8px;
+}
+
+/* --- Responsive styles for the timeline on mobile --- */
+@media screen and (max-width: 768px) {
+    .timeline-container::after {
+        display: none;
+    }
+
+    .timeline-item {
+        width: 100%;
+        padding-left: 15px;
+        padding-right: 15px;
+        margin-bottom: 2rem;
+    }
+
+    .timeline-item:nth-child(odd),
+    .timeline-item:nth-child(even) {
+        left: 0;
+        text-align: center;
+    }
+    
+    .timeline-item::after {
+        display: none;
+    }
+}
