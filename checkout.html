@@ -5,7 +5,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Chesser Academy - Checkout</title>
-  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -14,74 +13,66 @@
   <link rel="stylesheet" href="css/homestyles.css">
 </head>
 
-<body class="text-gray-200">
+<body class="checkout-body">
 
   <main>
-    <section class="min-h-screen flex items-center justify-center p-4">
-      <div class="glass-panel rounded-xl max-w-2xl w-full p-8 md:p-12 text-white shadow-2xl">
-        <h1 class="text-4xl md:text-5xl font-bold text-center mb-8 font-cinzel"
-          style="text-shadow: 2px 2px 12px rgba(0,0,0,0.8);">Checkout</h1>
-        <p class="text-center text-lg text-yellow-100 mb-10 opacity-90"
-          style="text-shadow: 1px 1px 6px rgba(0,0,0,0.8);">
+    <section class="checkout-section">
+      <div class="glass-panel checkout-panel">
+        <h1 class="checkout-title font-cinzel">Checkout</h1>
+        <p class="checkout-subtitle">
           Secure your spot at Chesser Academy and begin your journey to chess mastery!
         </p>
-        <form id="checkout-form" class="space-y-6">
-          <div>
-            <label for="name" class="block mb-2 font-semibold">Full Name</label>
-            <input type="text" id="name" name="name" required
-              class="w-full p-3 rounded-md bg-transparent text-gray-200 border-2 border-gray-500 focus:border-yellow-400 focus:outline-none focus:bg-gray-800/50">
+        <form id="checkout-form" class="checkout-form">
+          <div class="form-group">
+            <label for="name" class="form-label">Full Name</label>
+            <input type="text" id="name" name="name" required class="form-input">
           </div>
-          <div>
-            <label for="email" class="block mb-2 font-semibold">Email Address</label>
-            <input type="email" id="email" name="email" required
-              class="w-full p-3 rounded-md bg-transparent text-gray-200 border-2 border-gray-500 focus:border-yellow-400 focus:outline-none focus:bg-gray-800/50">
+          <div class="form-group">
+            <label for="email" class="form-label">Email Address</label>
+            <input type="email" id="email" name="email" required class="form-input">
           </div>
-          <div>
-            <label for="plan" class="block mb-2 font-semibold">Choose Your Plan</label>
-            <select id="plan" name="plan" required
-              class="w-full p-3 rounded-md bg-transparent text-gray-200 border-2 border-gray-500 focus:border-yellow-400 focus:outline-none focus:bg-gray-800/50">
+          <div class="form-group">
+            <label for="plan" class="form-label">Choose Your Plan</label>
+            <select id="plan" name="plan" required class="form-input">
               <option value="" disabled selected>Select a plan</option>
               <option value="beginner">Beginner's Gambit - $19/mo</option>
               <option value="intermediate">Intermediate Tactics - $29/mo</option>
               <option value="advanced">Advanced Endgame - $39/mo</option>
             </select>
           </div>
-          <div>
-            <label for="card" class="block mb-2 font-semibold">Card Number</label>
+          <div class="form-group">
+            <label for="card" class="form-label">Card Number</label>
             <input type="text" id="card" name="card" required maxlength="19" placeholder="1234 5678 9012 3456"
-              class="w-full p-3 rounded-md bg-transparent text-gray-200 border-2 border-gray-500 focus:border-yellow-400 focus:outline-none focus:bg-gray-800/50">
+              class="form-input">
           </div>
-          <div class="flex gap-4">
-            <div class="w-1/2">
-              <label for="expiry" class="block mb-2 font-semibold">Expiry</label>
+          <div class="form-row">
+            <div class="form-group half">
+              <label for="expiry" class="form-label">Expiry</label>
               <input type="text" id="expiry" name="expiry" required maxlength="5" placeholder="MM/YY"
-                class="w-full p-3 rounded-md bg-transparent text-gray-200 border-2 border-gray-500 focus:border-yellow-400 focus:outline-none focus:bg-gray-800/50">
+                class="form-input">
             </div>
-            <div class="w-1/2">
-              <label for="cvc" class="block mb-2 font-semibold">CVC</label>
-              <input type="text" id="cvc" name="cvc" required maxlength="4" placeholder="123"
-                class="w-full p-3 rounded-md bg-transparent text-gray-200 border-2 border-gray-500 focus:border-yellow-400 focus:outline-none focus:bg-gray-800/50">
+            <div class="form-group half">
+              <label for="cvc" class="form-label">CVC</label>
+              <input type="text" id="cvc" name="cvc" required maxlength="4" placeholder="123" class="form-input">
             </div>
           </div>
-          <div class="text-center pt-4">
-            <button type="submit" class="btn-glass px-10 py-4 rounded-lg font-bold text-xl">Complete Purchase</button>
+          <div class="form-actions">
+            <button type="submit" class="btn-glass checkout-btn">Complete Purchase</button>
           </div>
         </form>
       </div>
     </section>
   </main>
 
-  <footer class="glass-panel text-white text-center p-6 mt-10">
+  <footer class="glass-panel checkout-footer">
     <p>&copy; 2025 Grandmaster's Academy. All Rights Reserved.</p>
   </footer>
 
-  <div id="checkout-modal"
-    class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center p-4 z-50 opacity-0 pointer-events-none"
-    style="backdrop-filter: blur(8px);">
-    <div class="glass-panel rounded-lg p-8 text-center max-w-sm">
-      <h4 class="text-2xl font-bold mb-4 font-cinzel">Thank You!</h4>
+  <div id="checkout-modal" class="checkout-modal">
+    <div class="glass-panel modal-content">
+      <h4 class="modal-title font-cinzel">Thank You!</h4>
       <p>Your purchase was successful. Welcome to Chesser Academy!</p>
-      <button id="close-checkout-modal-btn" class="btn-glass mt-6 px-6 py-2 rounded-lg">Close</button>
+      <button id="close-checkout-modal-btn" class="btn-glass modal-btn">Close</button>
     </div>
   </div>
 
@@ -89,12 +80,10 @@
     // Simple modal logic for demo purposes
     document.getElementById('checkout-form').addEventListener('submit', function (e) {
       e.preventDefault();
-      document.getElementById('checkout-modal').classList.add('opacity-100', 'pointer-events-auto');
-      document.getElementById('checkout-modal').classList.remove('opacity-0', 'pointer-events-none');
+      document.getElementById('checkout-modal').classList.add('show');
     });
     document.getElementById('close-checkout-modal-btn').addEventListener('click', function () {
-      document.getElementById('checkout-modal').classList.remove('opacity-100', 'pointer-events-auto');
-      document.getElementById('checkout-modal').classList.add('opacity-0', 'pointer-events-none');
+      document.getElementById('checkout-modal').classList.remove('show');
     });
   </script>
 </body>
