@@ -678,4 +678,25 @@ h4,
   .timeline-text {
     font-size: 1em;
   }
+} 
+.about-us-title {
+  text-align: center;
+  padding-top: 30px;
+  margin-bottom: 100px;
 }
+
+.about-us-vision {
+  margin-bottom: 200px;
+}
+
+.about-us-contact {
+  margin-top: 200px;
+  margin-bottom: 200px;
+}
+
+.about-us-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 30px;
+} 
