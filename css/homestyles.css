@@ -249,51 +249,6 @@ h4,
   display: none;
 }
 
-/* Адаптивность */
-@media (max-width: 768px) {
-  .timeline-container {
-    padding: 20px 0;
-  }
-
-  .timeline-container::before {
-    left: 30px;
-  }
-
-  .timeline-item {
-    justify-content: flex-start !important;
-    margin-bottom: 60px;
-  }
-
-  .timeline-item .timeline-content {
-    margin-left: 60px !important;
-    margin-right: 0 !important;
-    width: calc(100% - 80px);
-    max-width: none;
-    padding: 24px 28px;
-  }
-
-  .timeline-item .timeline-content::after {
-    left: -12px !important;
-    right: auto !important;
-    border: 12px solid transparent;
-    border-right: 12px solid rgba(74, 56, 42, 0.25) !important;
-    border-left-color: transparent !important;
-  }
-
-  .timeline-circle {
-    left: 30px;
-    transform: translate(-50%, -50%);
-  }
-
-  .timeline-heading {
-    font-size: 1.3em;
-  }
-
-  .timeline-text {
-    font-size: 1em;
-  }
-}
-
 /* CSS for checkout page */
 .checkout-body {
   font-family: "Lora", serif;
@@ -350,16 +305,11 @@ h4,
   gap: 0.5rem;
 }
 
-.form-label {
-  font-weight: 600;
-  margin-bottom: 0.25rem;
-}
-
 .form-input {
   padding: 0.75rem;
   border-radius: 0.375rem;
   background: transparent;
-  color: #eae0d5;
+  color: #dacece;
   border: 2px solid #6b4f36;
   font-size: 1rem;
   transition: border-color 0.3s, background-color 0.3s;
@@ -370,7 +320,10 @@ h4,
   outline: none;
   background-color: rgba(74, 56, 42, 0.15);
 }
-
+.form-input#plan option {
+  background-color: rgba(88, 44, 24, 0.7); /* Коричневый фон для каждой опции */
+  color: white; /* Белый цвет текста для каждой опции */
+}
 .form-row {
   display: flex;
   gap: 1rem;
@@ -567,33 +520,6 @@ h4,
   font-size: 1.1rem;
   margin-top: 1rem;
 }
-.form-group {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-.form-label {
-  font-weight: 600;
-  margin-bottom: 0.25rem;
-}
-.form-input {
-  padding: 0.75rem;
-  border-radius: 0.375rem;
-  background: transparent;
-  color: #eae0d5;
-  border: 2px solid #6b4f36;
-  font-size: 1rem;
-  transition: border-color 0.3s, background-color 0.3s;
-}
-.form-input:focus {
-  border-color: #d4af37;
-  outline: none;
-  background-color: rgba(74, 56, 42, 0.15);
-}
-.form-actions {
-  text-align: center;
-  padding-top: 1rem;
-}
 
 /* Footer */
 .footer-panel {
@@ -705,5 +631,50 @@ h4,
 
   .timeline-item::after {
     display: none;
+  }
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .timeline-container {
+    padding: 20px 0;
+  }
+
+  .timeline-container::before {
+    left: 30px;
+  }
+
+  .timeline-item {
+    justify-content: flex-start !important;
+    margin-bottom: 60px;
+  }
+
+  .timeline-item .timeline-content {
+    margin-left: 60px !important;
+    margin-right: 0 !important;
+    width: calc(100% - 80px);
+    max-width: none;
+    padding: 24px 28px;
+  }
+
+  .timeline-item .timeline-content::after {
+    left: -12px !important;
+    right: auto !important;
+    border: 12px solid transparent;
+    border-right: 12px solid rgba(74, 56, 42, 0.25) !important;
+    border-left-color: transparent !important;
+  }
+
+  .timeline-circle {
+    left: 30px;
+    transform: translate(-50%, -50%);
+  }
+
+  .timeline-heading {
+    font-size: 1.3em;
+  }
+
+  .timeline-text {
+    font-size: 1em;
   }
 }
