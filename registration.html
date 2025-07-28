@@ -1,50 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Chesser - Register</title>
-  <link rel="stylesheet" href="/css/registration.css">
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500&family=Lora&display=swap" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chesser - Register</title>
+    <link rel="stylesheet" href="/css/registration.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500&family=Lora&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 </head>
+
 <body>
     <main class="register-wrapper">
-        <a href="javascript:history.back()" class="back-button" aria-label="Go back">
+        <a href="/home.html" class="back-button" aria-label="Go back">
             &#8592; Back
         </a>
         <section class="register-panel">
-        <header>
-            <h1 class="register-title font-cinzel">Register</h1>
-            <p class="register-subtitle">Create your account to get started</p>
-        </header>
-        <form class="register-form" id="register-form" autocomplete="on" novalidate>
-            <section class="reg-group">
-                <label class="reg-label" for="username">Username</label>
-                <input class="reg-input" type="text" id="username" name="username" required />
-            </section>
-            <section class="reg-group">
-                <label class="reg-label" for="email">Email</label>
-                <input class="reg-input" type="email" id="email" name="email" required />
-            </section>
-            <section class="reg-group reg-row">
-                <section class="reg-half">
-                    <label class="reg-label" for="password">Password</label>
-                    <input class="reg-input" type="password" id="password" name="password" required minlength="6" />
+            <header>
+                <h1 class="register-title font-cinzel">Register</h1>
+                <p class="register-subtitle">Create your account to get started</p>
+            </header>
+            <form class="register-form" id="register-form" autocomplete="on" novalidate>
+                <section class="reg-group">
+                    <label class="reg-label" for="username">Username</label>
+                    <input class="reg-input" type="text" id="username" name="username" required />
                 </section>
-                <section class="reg-half">
-                    <label class="reg-label" for="confirm-password">Confirm Password</label>
-                    <input class="reg-input" type="password" id="confirmPassword" name="confirmPassword" required />
+                <section class="reg-group">
+                    <label class="reg-label" for="email">Email</label>
+                    <input class="reg-input" type="email" id="email" name="email" required />
                 </section>
+                <section class="reg-group reg-row">
+                    <section class="reg-half">
+                        <label class="reg-label" for="password">Password</label>
+                        <input class="reg-input" type="password" id="password" name="password" required minlength="6" />
+                    </section>
+                    <section class="reg-half">
+                        <label class="reg-label" for="confirm-password">Confirm Password</label>
+                        <input class="reg-input" type="password" id="confirmPassword" name="confirmPassword" required />
+                    </section>
+                </section>
+                <section class="reg-actions">
+                    <button type="submit" class="reg-button">Register</button>
+                </section>
+            </form>
+            <section class="login-link">
+                <p>Already have an account? <a href="login.html" class="login-button">Login here</a></p>
             </section>
-            <section class="reg-actions">
-                <button type="submit" class="reg-button">Register</button>
-            </section>
-        </form>
     </main>
     <footer class="glass-panel footer-panel">
         <p>&copy; 2025 Grandmaster's Academy. All Rights Reserved.</p>
     </footer>
     <script src="/js/register.js"></script>
 </body>
+
 </html>

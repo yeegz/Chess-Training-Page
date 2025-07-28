@@ -1,30 +1,33 @@
-(function () {
-    emailjs.init("8opY8YaFj9jjp51vJ");
-})();
-
-document.getElementById("register-form").addEventListener("submit", function (e) {
+document.getElementById('register-form').addEventListener('submit', function (e) {
     e.preventDefault();
 
-    const form = this;
-    const password = form.password.value;
-    const confirm = form.confirmPassword.value;
+    const username = document.getElementById('username').value;
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+    const confirmPassword = document.getElementById('confirmPassword').value;
 
-    if (password !== confirm) {
+    if (username === "" || email === "" || password === "" || confirmPassword === "") {
+        alert("Please fill in all fields.");
+        return;
+    }
+
+    if (password !== confirmPassword) {
         alert("Passwords do not match.");
         return;
     }
 
-    const templateParams = {
-        username: form.username.value,
-        email: form.email.value,
+    const userData = {
+        username: username,
+        email: email,
+        password: password
     };
 
-    emailjs.send("service_mhwjpli", "template_c53bg1s", templateParams)
-        .then(function () {
-            alert("Registration sent successfully!");
-            form.reset();
-        }, function (error) {
-            alert("Failed to send registration. Error: " + JSON.stringify(error));
-        });
-});
+    let users = JSON.parse(localStorage.getItem('users')) || [];
 
+    users.push(userData);
+
+    localStorage.setItem('users', JSON.stringify(users));
+
+    alert("Registration successful!");
+    window.location.href = "login.html";
+});

@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const handleScroll = () => {
         const scrollPosition = window.scrollY;
-        
+
 
         if (heroSection && scrollPosition > heroSection.offsetHeight - 200) {
             stickyRegister.classList.add('visible');
@@ -20,15 +20,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     window.addEventListener('scroll', handleScroll);
-    
+
 
     if (contactForm) {
         contactForm.addEventListener('submit', (e) => {
-            e.preventDefault(); 
-            
+            e.preventDefault();
+
 
             modal.classList.remove('opacity-0', 'pointer-events-none');
-            
+
 
             console.log('Form submitted successfully.');
             const formData = new FormData(contactForm);
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 console.log(`${key}: ${value}`);
             }
 
-            contactForm.reset(); 
+            contactForm.reset();
         });
     }
 
@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (closeModalBtn) {
         closeModalBtn.addEventListener('click', closeModal);
     }
-    
+
 
     if (modal) {
         modal.addEventListener('click', (e) => {
@@ -59,4 +59,15 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    window.onload = function () {
+        const isLoggedIn = localStorage.getItem('isLoggedIn');
+
+        if (isLoggedIn === 'true') {
+            const registerButton = document.getElementById('register-button');
+            if (registerButton) {
+                registerButton.style.display = 'none';
+            }
+        }
+    };
 });
