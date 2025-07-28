@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chesser - Login</title>
+    <link rel="stylesheet" href="/css/login.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500&family=Lora&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <main class="login-wrapper">
+        <a href="/home.html" class="back-button" aria-label="Go back">
+            &#8592; Back
+        </a>
+        <section class="login-panel">
+            <header>
+                <h1 class="login-title font-cinzel">Login</h1>
+                <p class="login-subtitle">Sign in to your account</p>
+            </header>
+            <form class="login-form" id="login-form" autocomplete="on" novalidate>
+                <section class="login-group">
+                    <label class="login-label" for="email">Email</label>
+                    <input class="login-input" type="email" id="email" name="email" required />
+                </section>
+                <section class="login-group">
+                    <label class="login-label" for="password">Password</label>
+                    <input class="login-input" type="password" id="password" name="password" required />
+                </section>
+                <section class="login-actions">
+                    <button type="submit" class="login-button">Login</button>
+                </section>
+                <section class="login-link">
+                    <p>Don't have an account? <a href="/registration.html" class="btn-glass login-button">Register
+                            here</a></p>
+                </section>
+            </form>
+    </main>
+    <footer class="glass-panel footer-panel">
+        <p>&copy; 2025 Grandmaster's Academy. All Rights Reserved.</p>
+    </footer>
+    <script src="/js/login.js"></script>
+</body>
+
+</html>
