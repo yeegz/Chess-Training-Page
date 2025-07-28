@@ -110,7 +110,7 @@ h4,
   border: 1px solid rgba(234, 224, 213, 0.2);
   color: #eae0d5;
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-  padding: 32px 36px;
+  padding: 16px 16px;
   border-radius: 8px;
   width: 420px;
   position: relative;
@@ -128,9 +128,9 @@ h4,
   justify-content: flex-end;
 }
 
-.timeline-item.left .timeline-content {
+/* .timeline-item.left .timeline-content {
   margin-right: 50px;
-}
+} */
 
 .timeline-item.left .timeline-content::after {
   content: "";
@@ -150,9 +150,9 @@ h4,
   justify-content: flex-start;
 }
 
-.timeline-item.right .timeline-content {
+/* .timeline-item.right .timeline-content {
   margin-left: 50px;
-}
+} */
 
 .timeline-item.right .timeline-content::after {
   content: "";
@@ -635,7 +635,8 @@ h4,
 }
 
 /* Адаптивность */
-@media (max-width: 768px) {
+
+@media (max-width: 1050px) {
   .timeline-container {
     padding: 20px 0;
   }
