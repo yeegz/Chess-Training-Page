@@ -92,7 +92,7 @@
                 <div class="cart-item">
                     <div class="cart-item-details">
                         <h4 class="cart-item-title">${item.name}</h4>
-                        <p class="cart-item-price">$${item.price.toFixed(2)}</p>
+                        <p class="cart-item-price">${item.price.toFixed(2)}RM</p>
                         <button class="cart-item-remove-btn" data-id="${item.id}">Remove</button>
                     </div>
                 </div>`).join('');
@@ -104,7 +104,7 @@
         const totalItems = cart.length;
         const totalPrice = cart.reduce((total, item) => total + item.price, 0);
         if (DOM.cartItemCount) DOM.cartItemCount.textContent = totalItems;
-        if (DOM.cartTotalPrice) DOM.cartTotalPrice.textContent = `$${totalPrice.toFixed(2)}`;
+        if (DOM.cartTotalPrice) DOM.cartTotalPrice.textContent = `${totalPrice.toFixed(2)}RM`;
     };
 
     // Saves the cart to localStorage
@@ -127,12 +127,12 @@
 
         // Display items or an empty message
         DOM.orderSummaryItems.innerHTML = cart.length > 0 ?
-            cart.map(item => `<div class="summary-item"><span>${item.name}</span><span>$${item.price.toFixed(2)}</span></div>`).join('') :
+            cart.map(item => `<div class="summary-item"><span>${item.name}</span><span>${item.price.toFixed(2)}RM</span></div>`).join('') :
             '<p>Your cart is empty.</p>';
         
         // Calculate and display the total price
         const totalPrice = cart.reduce((total, item) => total + item.price, 0);
-        if (DOM.orderTotalPrice) DOM.orderTotalPrice.textContent = `$${totalPrice.toFixed(2)}`;
+        if (DOM.orderTotalPrice) DOM.orderTotalPrice.textContent = `${totalPrice.toFixed(2)}RM`;
         
         // Hide the payment form if the cart is empty
         if (cart.length === 0 && DOM.paymentForm) {

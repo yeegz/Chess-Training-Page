@@ -13,7 +13,7 @@
         const card = button.closest('.interactive-card');
         const name = card.querySelector('.service-title').textContent;
         const priceText = card.querySelector('.service-price').textContent;
-        const price = parseFloat(priceText.replace('$', ''));
+        const price = parseFloat(priceText.replace('RM', ''));
         // Create a simple, unique ID from the service name
         const id = name.replace(/\s+/g, '-').toLowerCase();
 
