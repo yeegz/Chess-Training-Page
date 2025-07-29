@@ -8,3 +8,169 @@
 .service-description { color: var(--color-text-secondary); line-height: 1.6; margin-bottom: 1.5rem; font-size: 0.95rem; }
 .service-price { font-size: 2.5rem; font-weight: 700; font-family: var(--font-secondary); color: var(--color-accent); margin-bottom: 1.5rem; }
 .service-btn { width: 100%; }
+
+/* --- START Session Modal Styles --- */
+.session-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    z-index: 9997; /* Below cart drawer, above main content */
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--transition-smooth);
+}
+
+.session-modal-overlay.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.session-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    background-color: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: 16px;
+    padding: 2rem;
+    z-index: 9998; /* Below cart drawer, above main content */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--transition-smooth), transform var(--transition-smooth), visibility var(--transition-smooth);
+    max-width: 600px;
+    width: 90%;
+    box-shadow: 0 10px 30px var(--color-shadow);
+}
+
+.session-modal.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.session-modal .modal-content {
+    position: relative;
+    padding: 0; /* Override default padding from homestyles.css */
+    background: none; /* Override default background */
+    border: none; /* Override default border */
+    box-shadow: none; /* Override default shadow */
+}
+
+.session-modal-title {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    color: var(--color-text-light);
+}
+
+.close-session-modal-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: none;
+    border: none;
+    color: var(--color-text-secondary);
+    font-size: 2rem;
+    cursor: pointer;
+    transition: color var(--transition-fast);
+}
+
+.close-session-modal-btn:hover {
+    color: var(--color-text-light);
+}
+
+.session-modal .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.session-modal .form-label {
+    position: static; /* Override absolute positioning */
+    display: block;
+    margin-bottom: 0.8rem;
+    color: var(--color-text-secondary);
+    font-size: 1rem;
+}
+
+.day-options, .time-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: center; /* Center the options */
+}
+
+.day-option, .time-option {
+    display: inline-flex;
+    align-items: center;
+    background-color: var(--color-bg-dark);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: 0.75rem 1.25rem;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    color: var(--color-text-secondary); /* Default text color */
+    font-size: 0.95rem;
+}
+
+.day-option:hover, .time-option:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-color: var(--color-accent);
+    color: var(--color-text-light);
+}
+
+.day-option input[type="checkbox"],
+.time-option input[type="radio"] {
+    display: none; /* Hide native checkbox/radio */
+}
+
+/* --- START CHANGES FOR HIGHLIGHTING THE BOX BORDER AND BACKGROUND --- */
+/* Apply checked state styles to the parent label (.day-option, .time-option) */
+.day-option:has(input[type="checkbox"]:checked),
+.time-option:has(input[type="radio"]:checked) {
+    background-color: var(--color-accent); /* Highlight the entire box background */
+    color: var(--color-bg-dark);           /* Change text color for contrast */
+    border-color: var(--color-accent);     /* Highlight the box border */
+    font-weight: 700;                      /* Bold text */
+}
+
+/* Ensure the span's text color follows the parent's, no need for separate span rule for checked state */
+.day-option span, .time-option span {
+    display: block;
+    pointer-events: none; /* Allow click on parent label */
+}
+/* --- END CHANGES --- */
+
+
+.time-selection-group {
+    margin-bottom: 1.5rem;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: 1rem;
+    background-color: rgba(0,0,0,0.1);
+}
+
+.time-selection-group h4 {
+    color: var(--color-accent);
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+/* Error message styling for modal */
+.session-modal .error-message {
+    text-align: center;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 576px) {
+    .session-modal {
+        padding: 1.5rem;
+    }
+    .day-option, .time-option {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+}
+/* --- END Session Modal Styles --- */

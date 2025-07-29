@@ -21,3 +21,32 @@
 .cart-footer { padding: 1.5rem; border-top: 1px solid var(--color-border); }
 .cart-total { display: flex; justify-content: space-between; font-size: 1.2rem; font-weight: 700; margin-bottom: 1.5rem; }
 .checkout-btn { width: 100%; }
+/* Add this new CSS rule wherever your cart drawer styles are defined */
+.cart-close-button {
+    background: var(--color-accent); /* Example: use your accent color */
+    color: var(--color-bg-dark); /* Text color for contrast */
+    border: 2px solid var(--color-accent);
+    border-radius: 8px; /* Rounded corners */
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all var(--transition-fast); /* Use your defined transition variable */
+    text-transform: uppercase; /* Match other buttons */
+
+    /* Position it to the right within the header */
+    margin-left: auto; /* Pushes it to the right if cart-header is flex */
+}
+
+.cart-close-button:hover {
+    background-color: var(--color-accent-dark);
+    border-color: var(--color-accent-dark);
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* You might want to remove or comment out the old close-btn styles if you completely replaced it */
+/*
+.close-cart-btn {
+    // ... old styles for the 'x' button
+}
+*/

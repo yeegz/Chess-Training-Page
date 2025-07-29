@@ -9,6 +9,7 @@
         contactForm: document.getElementById('contact-form'),
         feedbackModal: document.getElementById('feedback-modal'),
         closeModalBtn: document.getElementById('close-modal-btn'),
+        heroCtaButton: document.getElementById('hero-cta-button'),
     };
 
     // Hold stateful values for things like scroll position
@@ -25,7 +26,13 @@
     // Manages the preloader screen
     const PreloaderModule = {
         init() {
-            window.addEventListener('load', () => DOM.preloader?.classList.add('hidden'));
+            // Use window.addEventListener('load') to ensure all resources (images, etc.) are loaded
+            // before hiding the preloader.
+            window.addEventListener('load', () => {
+                if (DOM.preloader) {
+                    DOM.preloader.classList.add('hidden');
+                }
+            });
         }
     };
 
@@ -100,12 +107,44 @@
         hideModal() { DOM.feedbackModal?.classList.remove('show'); }
     };
 
+    // --- Start of Changes (Hero CTA Module Integration) ---
+    // Manages the "Unlock Your Potential" button's destination
+    const HeroCtaModule = {
+        init() {
+            if (!DOM.heroCtaButton) {
+                console.warn('Hero CTA button not found.');
+                return;
+            }
+
+            // Bind the handleClick method to the module's 'this' context once
+            // This is important if handleClick ever needs to access 'this.someOtherModuleProperty'
+            this.boundHandleClick = this.handleClick.bind(this);
+
+            // Ensure previous event listeners (if any) are cleared before adding a new one
+            DOM.heroCtaButton.removeEventListener('click', this.boundHandleClick);
+            DOM.heroCtaButton.addEventListener('click', this.boundHandleClick);
+        },
+        handleClick() {
+            const isLoggedIn = sessionStorage.getItem('isLoggedIn') === 'true';
+
+            if (isLoggedIn) {
+                console.log('User is logged in. Redirecting to services.html');
+                window.location.href = 'services.html'; // Takes logged-in users to The Path (services page)
+            } else {
+                console.log('User is not logged in. Redirecting to registration.html');
+                window.location.href = 'registration.html'; // Takes guests to the registration page
+            }
+        }
+    };
+    // --- End of Changes ---
+
     // Main function to start all modules
     function initialize() {
         PreloaderModule.init();
         AnimationModule.init();
         ScrollModule.init();
         FormModule.init();
+        HeroCtaModule.init();
     }
     
     // Defer initialization until the DOM is fully loaded
