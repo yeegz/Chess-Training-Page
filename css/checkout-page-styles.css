@@ -1,0 +1,7 @@
+.checkout-page-container { padding: calc(var(--header-height) + 4rem) 1rem 4rem; }
+.checkout-layout { display: grid; grid-template-columns: 1fr 1.25fr; gap: 2rem; align-items: flex-start; }
+.order-summary-card h3, .payment-details-card h3 { text-align: center; margin-bottom: 2rem; }
+.summary-item { display: flex; justify-content: space-between; padding: 1rem 0; border-bottom: 1px solid var(--color-border); color: var(--color-text-secondary); }
+.summary-item:last-of-type { border-bottom: none; }
+.order-total-line { display: flex; justify-content: space-between; font-weight: 700; font-size: 1.25rem; padding: 1.5rem 0 0; margin-top: 1rem; border-top: 2px solid var(--color-accent); color: var(--color-text-light); }
+@media (max-width: 992px) { .checkout-layout { grid-template-columns: 1fr; } }

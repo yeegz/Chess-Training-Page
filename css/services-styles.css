@@ -1,0 +1,10 @@
+.services-page-container { padding: calc(var(--header-height) + 4rem) 1rem 4rem; }
+.services-header { text-align: center; margin-bottom: 4rem; }
+.services-subtitle { max-width: 600px; margin: 0 auto; color: var(--color-text-secondary); font-size: 1.1rem; line-height: 1.6; }
+.service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+.service-card .card-content { display: flex; flex-direction: column; justify-content: space-between; height: 100%; }
+.service-card-body { flex-grow: 1; }
+.service-title { font-family: var(--font-secondary); font-size: 1.75rem; color: var(--color-text-light); margin-bottom: 1rem; }
+.service-description { color: var(--color-text-secondary); line-height: 1.6; margin-bottom: 1.5rem; font-size: 0.95rem; }
+.service-price { font-size: 2.5rem; font-weight: 700; font-family: var(--font-secondary); color: var(--color-accent); margin-bottom: 1.5rem; }
+.service-btn { width: 100%; }
