@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chesser Academy - Elite Chess Training</title>
+    <meta name="author" content="Hatem Samad">
+    <meta name="description" content="Chesser Academy: An elite, interactive chess training service designed to elevate players of all levels to grandmaster potential.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="css/homestyles.css">
+    <link rel="stylesheet" href="css/checkoutstyles.css">
+</head>
+<body>
+
+    <div class="preloader" id="preloader">
+        <div class="preloader-king" aria-label="Loading..."></div>
+    </div>
+
+    <header class="main-header" id="main-header">
+        <nav class="main-nav container">
+            <a href="index.html" class="nav-brand font-cinzel">Chesser</a>
+            <div class="nav-links">
+                <a href="services.html" class="nav-item">The Path</a>
+                <a href="about.html" class="nav-item">About</a>
+                <a href="#contact" class="nav-item">Contact</a>
+            </div>
+            <div class="header-actions" id="header-actions">
+                </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero-section">
+            <div class="animated-grid"></div>
+            <div class="hero-content">
+                <h1 class="hero-title font-cinzel" id="hero-title" aria-label="Chesser Academy"></h1>
+                <p class="hero-subtitle" data-animate="fade-in-up" data-animation-delay="1000">A Chess Training Service On Steroids.</p>
+                <div data-animate="fade-in-up" data-animation-delay="1200">
+                    <a href="registration.html" class="button-primary hero-btn">Unlock Your Potential</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about-section">
+            <div class="container about-container" data-animate="fade-in-up">
+                <h2 class="section-title font-cinzel">The Philosophy of the Board</h2>
+                <p class="about-text">At Chesser Academy, we believe chess is more than a game—it's a tool for developing critical thinking, foresight, and mental discipline. Founded by national masters, our mission is to make high-level chess education accessible to everyone, fostering a new generation of strategic thinkers both on and off the 64 squares. We don't just teach moves; we teach you how to think.</p>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <div class="interactive-card" data-animate="fade-in-up">
+                    <div class="card-glow"></div>
+                    <div class="card-content">
+                        <h2 class="section-title font-cinzel">Make Your Move</h2>
+                        <p class="contact-subtitle">Have a question? Send us a message and we'll be in touch.</p>
+                        <form id="contact-form" class="contact-form" novalidate>
+                            <div class="form-group"><input type="text" id="name" name="name" required class="form-input"><label for="name" class="form-label">Name</label><span class="input-line"></span></div>
+                            <div class="form-group"><input type="email" id="email" name="email" required class="form-input"><label for="email" class="form-label">Email</label><span class="input-line"></span></div>
+                            <div class="form-group"><textarea id="message" name="message" rows="5" required class="form-input"></textarea><label for="message" class="form-label">Message</label><span class="input-line"></span></div>
+                            <div class="form-actions"><button type="submit" class="button-primary contact-btn">Send Message</button></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-links"><a href="about.html" class="footer-link">About Us</a><a href="services.html" class="footer-link">Services</a><a href="#contact" class="footer-link">Contact</a></div>
+        <p>&copy; 2025 Chesser Academy. All Rights Reserved.</p>
+    </footer>
+
+    <div class="feedback-modal" id="feedback-modal" role="dialog"><div class="modal-content"><h3 id="modal-title" class="modal-title font-cinzel">Thank You!</h3><p>Your message has been sent. We will get back to you shortly.</p><button id="close-modal-btn" class="button-primary modal-btn">Close</button></div></div>
+    
+    <div class="cart-drawer-overlay" id="cart-drawer-overlay"></div>
+    <div class="cart-drawer" id="cart-drawer"><div class="cart-header"><h3 class="font-cinzel">Your Cart</h3><button class="close-cart-btn" id="close-cart-btn">&times;</button></div><div class="cart-body" id="cart-body"></div><div class="cart-footer"><div class="cart-total"><span>Total:</span><span id="cart-total-price">$0.00</span></div><button class="button-primary checkout-btn" id="checkout-btn">Proceed to Checkout</button></div></div>
+
+    <script src="js/script.js"></script>
+    <script src="js/checkout.js"></script>
+</body>
+</html>
