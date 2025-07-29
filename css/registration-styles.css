@@ -1,0 +1,5 @@
+.register-page-container { display: flex; align-items: center; justify-content: center; min-height: 100vh; padding: calc(var(--header-height) + 4rem) 1rem 4rem; }
+.register-subtitle { text-align: center; color: var(--color-text-secondary); margin: -2rem 0 3rem; }
+.login-prompt { text-align: center; margin-top: 2rem; color: var(--color-text-secondary); }
+.login-prompt a { color: var(--color-accent); font-weight: 500; text-decoration: none; transition: color var(--transition-fast); }
+.login-prompt a:hover { color: var(--color-text-light); text-decoration: underline; }

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chesser Academy - Training Services</title>
+    <meta name="author" content="Hatem Samad">
+    <meta name="description" content="Explore chess training services at Chesser Academy.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="css/homestyles.css">
+    <link rel="stylesheet" href="css/checkoutstyles.css">
+    <link rel="stylesheet" href="css/services-styles.css">
+</head>
+<body>
+
+    <header class="main-header" id="main-header">
+        <nav class="main-nav container">
+            <a href="index.html" class="nav-brand font-cinzel">Chesser</a>
+            <div class="nav-links">
+                <a href="services.html" class="nav-item">The Path</a>
+                <a href="about.html" class="nav-item">About</a>
+                <a href="index.html#contact" class="nav-item">Contact</a>
+            </div>
+            <div class="header-actions" id="header-actions">
+                </div>
+        </nav>
+    </header>
+
+    <main class="services-page-container">
+        <div class="container">
+            <header class="services-header">
+                <h1 class="section-title font-cinzel">Our Training Services</h1>
+                <p class="services-subtitle">Choose the perfect plan to elevate your chess game. We offer flexible options to suit every learning style and schedule.</p>
+            </header>
+            <div class="service-grid">
+                <div class="interactive-card service-card">
+                    <div class="card-glow"></div>
+                    <div class="card-content">
+                        <div class="service-card-body">
+                            <h3 class="service-title">Group Coaching - Intensive</h3>
+                            <p class="service-description"><strong>2 sessions per week</strong> for 4 weeks with a group. Perfect for those who thrive in a collaborative environment.</p>
+                            <div class="service-price" data-price="399.00">399.00RM</div>
+                        </div>
+                        <div class="form-actions">
+                            <!-- Added data attributes for JS to easily grab service info -->
+                            <button class="button-primary service-btn" data-service-type="Group" data-sessions-per-week="2">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="interactive-card service-card">
+                    <div class="card-glow"></div>
+                    <div class="card-content">
+                        <div class="service-card-body">
+                            <h3 class="service-title">Private Coaching - Intensive</h3>
+                            <p class="service-description"><strong>2 sessions per week</strong> for 4 weeks alone. Tailored for dedicated individuals seeking personalized attention.</p>
+                            <div class="service-price" data-price="699.00">699.00RM</div>
+                        </div>
+                        <div class="form-actions">
+                            <button class="button-primary service-btn" data-service-type="Private" data-sessions-per-week="2">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="interactive-card service-card">
+                    <div class="card-glow"></div>
+                    <div class="card-content">
+                        <div class="service-card-body">
+                            <h3 class="service-title">Group Coaching - Standard</h3>
+                            <p class="service-description"><strong>1 session per week</strong> for 4 weeks with a group. A balanced approach for consistent improvement.</p>
+                            <div class="service-price" data-price="249.00">249.00RM</div>
+                        </div>
+                        <div class="form-actions">
+                            <button class="button-primary service-btn" data-service-type="Group" data-sessions-per-week="1">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="interactive-card service-card">
+                    <div class="card-glow"></div>
+                    <div class="card-content">
+                        <div class="service-card-body">
+                            <h3 class="service-title">Private Coaching - Standard</h3>
+                            <p class="service-description"><strong>1 session per week</strong> for 4 weeks alone. Focused individual coaching for steady progress.</p>
+                            <div class="service-price" data-price="399.00">399.00RM</div>
+                        </div>
+                        <div class="form-actions">
+                            <button class="button-primary service-btn" data-service-type="Private" data-sessions-per-week="1">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-links"><a href="about.html" class="footer-link">About Us</a><a href="services.html" class="footer-link">Services</a><a href="index.html#contact" class="footer-link">Contact</a></div>
+        <p>&copy; 2025 Chesser Academy. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Cart Drawer (Common to all pages) -->
+    <div class="cart-drawer-overlay" id="cart-drawer-overlay"></div>
+    <div class="cart-drawer" id="cart-drawer">
+        <div class="cart-header">
+            <h3 class="font-cinzel">Your Cart</h3>
+            <!-- NEW BUTTON HERE -->
+            <button class="cart-close-button" id="new-close-cart-btn">Close</button>
+        </div>
+        <div class="cart-body" id="cart-body"></div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total-price">0.00RM</span>
+            </div>
+            <button class="button-primary checkout-btn" id="checkout-btn">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <!-- START Session Selection Modal -->
+    <div class="session-modal-overlay" id="session-modal-overlay"></div>
+    <div class="session-modal" id="session-modal">
+        <div class="modal-content">
+            <h3 class="font-cinzel" id="session-modal-title">Select Your Sessions</h3>
+            <button class="close-session-modal-btn" id="close-session-modal-btn">&times;</button>
+            <form id="session-selection-form">
+                <div class="form-group">
+                    <p class="form-label">Choose your day(s) for <span id="sessions-needed-text"></span> session(s):</p>
+                    <div class="day-options" id="day-options">
+                        <!-- Days will be dynamically loaded here by JS -->
+                    </div>
+                    <div class="error-message" id="day-error-message"></div>
+                </div>
+
+                <div class="time-selection-container" id="time-selection-container">
+                    <!-- Time slots will be dynamically loaded here by JS -->
+                </div>
+                <div class="error-message" id="time-error-message"></div>
+
+                <div class="form-actions">
+                    <button type="submit" class="button-primary" id="confirm-session-btn">Confirm Sessions</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- END Session Selection Modal -->
+
+    <script src="js/checkout.js"></script>
+    <script src="js/services.js"></script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chesser Academy - Register</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="css/homestyles.css">
+    <link rel="stylesheet" href="css/checkoutstyles.css">
+    <link rel="stylesheet" href="css/registration-styles.css">
+</head>
+<body>
+
+    <header class="main-header" id="main-header">
+        <nav class="main-nav container">
+            <a href="index.html" class="nav-brand font-cinzel">Chesser</a>
+            <div class="nav-links"><a href="services.html" class="nav-item">The Path</a><a href="about.html" class="nav-item">About</a><a href="index.html#contact" class="nav-item">Contact</a></div>
+            <div class="header-actions" id="header-actions"></div>
+        </nav>
+    </header>
+
+    <main class="register-page-container">
+        <div class="container">
+            <div class="interactive-card">
+                <div class="card-glow"></div>
+                <div class="card-content">
+                    <h2 class="section-title font-cinzel">Begin Your Training</h2>
+                    <p class="register-subtitle">Create an account to unlock your potential.</p>
+                    <form id="register-form" class="contact-form" novalidate>
+                        <div class="form-group"><input type="text" id="username" name="username" required class="form-input"><label for="username" class="form-label">Username</label><span class="input-line"></span><div class="error-message"></div></div>
+                        <div class="form-group"><input type="email" id="email" name="email" required class="form-input"><label for="email" class="form-label">Email</label><span class="input-line"></span><div class="error-message"></div></div>
+                        <div class="form-row">
+                            <div class="form-group"><input type="password" id="password" name="password" required minlength="8" class="form-input"><label for="password" class="form-label">Password</label><span class="input-line"></span><div class="error-message"></div></div>
+                            <div class="form-group"><input type="password" id="confirmPassword" name="confirmPassword" required class="form-input"><label for="confirmPassword" class="form-label">Confirm Password</label><span class="input-line"></span><div class="error-message"></div></div>
+                        </div>
+                        <div class="form-actions"><button type="submit" class="button-primary contact-btn">Create Account</button></div>
+                    </form>
+                    <div class="login-prompt"><p>Already have an account? <a href="login.html">Login Here</a></p></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-links"><a href="about.html" class="footer-link">About Us</a><a href="services.html" class="footer-link">Services</a><a href="index.html#contact" class="footer-link">Contact</a></div>
+        <p>&copy; 2025 Chesser Academy. All Rights Reserved.</p>
+    </footer>
+
+    <div class="feedback-modal" id="feedback-modal" role="dialog"><div class="modal-content"><h3 id="modal-title" class="modal-title font-cinzel">Registration Successful!</h3><p>Welcome to the Academy. You will now be redirected to the login page.</p><button id="close-modal-btn" class="button-primary modal-btn">Proceed</button></div></div>
+    
+    <div class="cart-drawer-overlay" id="cart-drawer-overlay"></div>
+    <div class="cart-drawer" id="cart-drawer"><div class="cart-header"><h3 class="font-cinzel">Your Cart</h3><button class="close-cart-btn" id="close-cart-btn">&times;</button></div><div class="cart-body" id="cart-body"></div><div class="cart-footer"><div class="cart-total"><span>Total:</span><span id="cart-total-price">$0.00</span></div><button class="button-primary checkout-btn" id="checkout-btn">Proceed to Checkout</button></div></div>
+
+    <script src="js/checkout.js"></script>
+    <script src="js/registration.js"></script>
+</body>
+</html>
