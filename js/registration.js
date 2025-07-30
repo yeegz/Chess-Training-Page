@@ -1,5 +1,8 @@
 'use strict';
 (() => {
+    // Initialize the Public key for sending email via EmailJS
+    emailjs.init('8opY8YaFj9jjp51vJ');
+
     // Cache form elements from the DOM
     const registerForm = document.getElementById('register-form');
     if (!registerForm) return;
@@ -70,6 +73,16 @@
 
             // *** FIX: Set a flag indicating a new user just registered ***
             sessionStorage.setItem('justRegistered', 'true');
+
+            // *** Send confirmation email using EmailJS ***
+            emailjs.send('service_mhwjpli', 'template_c53bg1s', {
+                username: usernameField.value,
+                email: emailField.value
+            }).then(() => {
+                console.log('Email sent successfully.');
+            }).catch((error) => {
+                console.error('Failed to send email:', error);
+            });
 
             // Show success modal
             feedbackModal?.classList.add('show');
