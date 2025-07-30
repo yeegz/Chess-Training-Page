@@ -2,90 +2,93 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chesser Academy - Checkout</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lora:ital,wght@0,400..700;1,400..700&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="css/homestyles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chesser Academy - Checkout</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="css/homestyles.css">
+    <link rel="stylesheet" href="css/checkoutstyles.css">
+    <link rel="stylesheet" href="css/checkout-page-styles.css">
 </head>
 
-<body class="checkout-body">
+<body class="checkout-page">
 
-  <main>
-    <section class="checkout-section">
-      <div class="glass-panel checkout-panel">
-        <h1 class="checkout-title font-cinzel">Checkout</h1>
-        <p class="checkout-subtitle">
-          Secure your spot at Chesser Academy and begin your journey to chess mastery!
-        </p>
-        <form id="checkout-form" class="checkout-form">
-          <div class="form-group">
-            <label for="name" class="form-label">Full Name</label>
-            <input type="text" id="name" name="name" required class="form-input">
-          </div>
-          <div class="form-group">
-            <label for="email" class="form-label">Email Address</label>
-            <input type="email" id="email" name="email" required class="form-input">
-          </div>
-          <div class="form-group">
-            <label for="plan" class="form-label">Choose Your Plan</label>
-            <select id="plan" name="plan" required class="form-input">
-              <option value="" disabled selected>Select a plan</option>
-              <option value="beginner">Beginner's Gambit - $19/mo</option>
-              <option value="intermediate">Intermediate Tactics - $29/mo</option>
-              <option value="advanced">Advanced Endgame - $39/mo</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="card" class="form-label">Card Number</label>
-            <input type="text" id="card" name="card" required maxlength="19" placeholder="1234 5678 9012 3456"
-              class="form-input">
-          </div>
-          <div class="form-row">
-            <div class="form-group half">
-              <label for="expiry" class="form-label">Expiry</label>
-              <input type="text" id="expiry" name="expiry" required maxlength="5" placeholder="MM/YY"
-                class="form-input">
+    <header class="main-header" id="main-header">
+        <nav class="main-nav container">
+            <a href="index.html" class="nav-brand font-cinzel">Chesser</a>
+            <div class="nav-links"><a href="services.html" class="nav-item">The Path</a><a href="about.html"
+                    class="nav-item">About</a><a href="index.html#contact" class="nav-item">Contact</a></div>
+            <div class="header-actions" id="header-actions"></div>
+        </nav>
+    </header>
+
+    <main class="checkout-page-container">
+        <div class="container">
+            <h1 class="section-title font-cinzel">Finalize Your Order</h1>
+            <div class="checkout-layout">
+                <div class="order-summary-card interactive-card">
+                    <div class="card-glow"></div>
+                    <div class="card-content">
+                        <h3 class="font-cinzel">Order Summary</h3>
+                        <div id="order-summary-items"></div>
+                        <div class="order-total-line">
+                            <span>Total</span>
+                            <span id="order-total-price">0.00RM</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="payment-details-card interactive-card">
+                    <div class="card-glow"></div>
+                    <div class="card-content">
+                        <h3 class="font-cinzel">Payment Details</h3>
+                        <form id="payment-form" class="contact-form">
+                            <div class="form-group"><input type="text" id="card-name" required class="form-input"
+                                    placeholder=" "><label for="card-name" class="form-label">Name on Card</label><span
+                                    class="input-line"></span></div>
+                            <div class="form-group"><input type="text" id="card-number" required class="form-input"
+                                    placeholder=" "><label for="card-number" class="form-label">Card Number</label><span
+                                    class="input-line"></span></div>
+                            <div class="form-row">
+                                <div class="form-group"><input type="text" id="card-expiry" required class="form-input"
+                                        placeholder=" "><label for="card-expiry" class="form-label">MM / YY</label><span
+                                        class="input-line"></span></div>
+                                <div class="form-group"><input type="text" id="card-cvc" required class="form-input"
+                                        placeholder=" "><label for="card-cvc" class="form-label">CVC</label><span
+                                        class="input-line"></span></div>
+                            </div>
+                            <div class="form-actions"><button type="submit" class="button-primary">Complete
+                                    Purchase</button></div>
+                        </form>
+                    </div>
+                </div>
             </div>
-            <div class="form-group half">
-              <label for="cvc" class="form-label">CVC</label>
-              <input type="text" id="cvc" name="cvc" required maxlength="4" placeholder="123" class="form-input">
-            </div>
-          </div>
-          <div class="form-actions">
-            <button type="submit" class="btn-glass checkout-btn">Complete Purchase</button>
-          </div>
-        </form>
-      </div>
-    </section>
-  </main>
+        </div>
+    </main>
 
-  <footer class="glass-panel checkout-footer">
-    <p>&copy; 2025 Grandmaster's Academy. All Rights Reserved.</p>
-  </footer>
+    <footer class="main-footer">
+        <div class="footer-links"><a href="about.html" class="footer-link">About Us</a><a href="services.html"
+                class="footer-link">Services</a><a href="index.html#contact" class="footer-link">Contact</a></div>
+        <p>&copy; 2025 Chesser Academy. All Rights Reserved.</p>
+    </footer>
 
-  <div id="checkout-modal" class="checkout-modal">
-    <div class="glass-panel modal-content">
-      <h4 class="modal-title font-cinzel">Thank You!</h4>
-      <p>Your purchase was successful. Welcome to Chesser Academy!</p>
-      <button id="close-checkout-modal-btn" class="btn-glass modal-btn">Close</button>
+    <div class="cart-drawer-overlay" id="cart-drawer-overlay"></div>
+    <div class="cart-drawer" id="cart-drawer">
+        <div class="cart-header">
+            <h3 class="font-cinzel">Your Cart</h3><button class="close-cart-btn" id="close-cart-btn">&times;</button>
+        </div>
+        <div class="cart-body" id="cart-body"></div>
+        <div class="cart-footer">
+            <div class="cart-total"><span>Total:</span><span id="cart-total-price">0.00RM</span></div><button
+                class="button-primary checkout-btn" id="checkout-btn">Proceed to Checkout</button>
+        </div>
     </div>
-  </div>
 
-  <script>
-    // Simple modal logic for demo purposes
-    document.getElementById('checkout-form').addEventListener('submit', function (e) {
-      e.preventDefault();
-      document.getElementById('checkout-modal').classList.add('show');
-    });
-    document.getElementById('close-checkout-modal-btn').addEventListener('click', function () {
-      document.getElementById('checkout-modal').classList.remove('show');
-    });
-  </script>
+    <script src="js/checkout.js"></script>
 </body>
 
 </html>

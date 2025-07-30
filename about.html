@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chesser Academy - About Us</title>
+    <meta name="author" content="Hatem Samad">
+    <meta name="description" content="Learn about the mission and the masters behind Chesser Academy.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="css/homestyles.css">
+    <link rel="stylesheet" href="css/checkoutstyles.css">
+    <link rel="stylesheet" href="css/about-styles.css">
+</head>
+<body>
+
+    <header class="main-header" id="main-header">
+        <nav class="main-nav container">
+            <a href="index.html" class="nav-brand font-cinzel">Chesser</a>
+            <div class="nav-links">
+                <a href="services.html" class="nav-item">The Path</a>
+                <a href="about.html" class="nav-item">About</a>
+                <a href="index.html#contact" class="nav-item">Contact</a>
+            </div>
+            <div class="header-actions" id="header-actions">
+                </div>
+        </nav>
+    </header>
+
+    <main class="about-page-container">
+        <div class="container">
+            <header class="about-header">
+                <h1 class="section-title font-cinzel">Our Story & Philosophy</h1>
+                <p class="about-subtitle">At Chesser Academy, we see the 64 squares as a universe of infinite possibility—a training ground for the mind. Our institution was founded on the belief that the discipline, strategy, and foresight learned from chess are essential skills for life.</p>
+            </header>
+
+            <section class="mission-section">
+                <div class="interactive-card">
+                    <div class="card-glow"></div>
+                    <div class="card-content">
+                        <h2 class="font-cinzel">Our Mission</h2>
+                        <p>Our mission is to demystify the path to chess mastery. We provide elite, structured training that was once reserved for the world's top players and make it accessible to anyone with a passion for the game. We don't just teach openings and endgames; we cultivate a grandmaster's mindset, empowering our students to think with clarity, calculate with precision, and compete with confidence.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="team-section">
+                <h2 class="section-title font-cinzel">Meet the Masters</h2>
+                <div class="team-grid">
+                    <div class="interactive-card team-member-card"><div class="card-glow"></div><div class="card-content"><img src="png/Yousof.jpg" alt="Photo of Yousof Selim" class="team-member-photo"><h3 class="team-member-name font-cinzel">Yousof Selim</h3><p class="team-member-title">Home and Main Style</p><p class="team-member-bio">Responsible for the home page and the foundation design of All Pages</p></div></div>
+                    <div class="interactive-card team-member-card"><div class="card-glow"></div><div class="card-content"><img src="png/Hatem.jpg" alt="Photo of Hatem Samad" class="team-member-photo"><h3 class="team-member-name font-cinzel">Hatem Samad</h3><p class="team-member-title">Services Page</p><p class="team-member-bio">Responsible for the Services Page</p></div></div>
+                    <div class="interactive-card team-member-card"><div class="card-glow"></div><div class="card-content"><img src="png/Nikita.jpg" alt="Photo of Nikita Shamporov" class="team-member-photo"><h3 class="team-member-name font-cinzel">Nikita Shamporov</h3><p class="team-member-title">Registration Page</p><p class="team-member-bio">Responsible for Registration Verifcation and Page Layout</p></div></div>
+                    <div class="interactive-card team-member-card"><div class="card-glow"></div><div class="card-content"><img src="png/Shamil.jpg" alt="Photo of Shamil" class="team-member-photo"><h3 class="team-member-name font-cinzel">Shamil </h3><p class="team-member-title">About US</p><p class="team-member-bio">Responsible for creating this page the About me</p></div></div>
+                    <div class="interactive-card team-member-card"><div class="card-glow"></div><div class="card-content"><img src="png/vitalii.jpeg" alt="Photo of Vitalii" class="team-member-photo"><h3 class="team-member-name font-cinzel">Vitalii</h3><p class="team-member-title">Checkout Page</p><p class="team-member-bio">Responsible for the Checkout Page and it's design</p></div></div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-links"><a href="about.html" class="footer-link">About Us</a><a href="services.html" class="footer-link">Services</a><a href="index.html#contact" class="footer-link">Contact</a></div>
+        <p>&copy; 2025 Chesser Academy. All Rights Reserved.</p>
+    </footer>
+
+    <div class="cart-drawer-overlay" id="cart-drawer-overlay"></div>
+    <div class="cart-drawer" id="cart-drawer"><div class="cart-header"><h3 class="font-cinzel">Your Cart</h3><button class="close-cart-btn" id="close-cart-btn">&times;</button></div><div class="cart-body" id="cart-body"></div><div class="cart-footer"><div class="cart-total"><span>Total:</span><span id="cart-total-price">$0.00</span></div><button class="button-primary checkout-btn" id="checkout-btn">Proceed to Checkout</button></div></div>
+
+    <script src="js/checkout.js"></script>
+
+</body>
+</html>
