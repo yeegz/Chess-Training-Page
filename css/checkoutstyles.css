@@ -164,10 +164,3 @@
   border-color: var(--color-accent-dark);
   transform: translateY(-2px); /* Slight lift effect */
 }
-
-/* You might want to remove or comment out the old close-btn styles if you completely replaced it */
-/*
-.close-cart-btn {
-    // ... old styles for the 'x' button
-}
-*/

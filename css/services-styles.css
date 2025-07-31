@@ -1,176 +1,209 @@
-.services-page-container { padding: calc(var(--header-height) + 4rem) 1rem 4rem; }
-.services-header { text-align: center; margin-bottom: 4rem; }
-.services-subtitle { max-width: 600px; margin: 0 auto; color: var(--color-text-secondary); font-size: 1.1rem; line-height: 1.6; }
-.service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
-.service-card .card-content { display: flex; flex-direction: column; justify-content: space-between; height: 100%; }
-.service-card-body { flex-grow: 1; }
-.service-title { font-family: var(--font-secondary); font-size: 1.75rem; color: var(--color-text-light); margin-bottom: 1rem; }
-.service-description { color: var(--color-text-secondary); line-height: 1.6; margin-bottom: 1.5rem; font-size: 0.95rem; }
-.service-price { font-size: 2.5rem; font-weight: 700; font-family: var(--font-secondary); color: var(--color-accent); margin-bottom: 1.5rem; }
-.service-btn { width: 100%; }
+/* Services Page Layout */
+.services-page-container {
+  padding: calc(var(--header-height) + 4rem) 1rem 4rem; /* Account for header */
+}
 
-/* --- START Session Modal Styles --- */
+/* Header Styles */
+.services-header {
+  text-align: center; /* Center title */
+  margin-bottom: 4rem; /* Spacing */
+}
+.services-subtitle {
+  max-width: 600px; /* Readable width */
+  margin: 0 auto; /* Center */
+  color: var(--color-text-secondary); /* Muted */
+  font-size: 1.1rem; /* Slightly larger */
+  line-height: 1.6; /* Readable */
+}
+
+/* Service Grid */
+.service-grid {
+  display: grid; /* Grid layout */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive */
+  gap: 2rem; /* Spacing */
+}
+
+/* Service Cards */
+.service-card .card-content {
+  display: flex; /* Flex layout */
+  flex-direction: column; /* Stack content */
+  justify-content: space-between; /* Push button down */
+  height: 100%; /* Full height */
+}
+.service-card-body {
+  flex-grow: 1; /* Grow to fill */
+}
+
+/* Card Text Elements */
+.service-title {
+  font-family: var(--font-secondary); /* Special font */
+  font-size: 1.75rem; /* Large */
+  color: var(--color-text-light); /* Bright */
+  margin-bottom: 1rem; /* Spacing */
+}
+.service-description {
+  color: var(--color-text-secondary); /* Muted */
+  line-height: 1.6; /* Readable */
+  margin-bottom: 1.5rem; /* Spacing */
+  font-size: 0.95rem; /* Slightly smaller */
+}
+.service-price {
+  font-size: 2.5rem; /* Large */
+  font-weight: 700; /* Bold */
+  font-family: var(--font-secondary); /* Special font */
+  color: var(--color-accent); /* Brand color */
+  margin-bottom: 1.5rem; /* Spacing */
+}
+.service-btn {
+  width: 100%; /* Full width */
+}
+
+/* --- Modal Overlay --- */
 .session-modal-overlay {
-    position: fixed;
-    inset: 0;
-    background-color: rgba(0, 0, 0, 0.7);
-    backdrop-filter: blur(5px);
-    z-index: 9997; /* Below cart drawer, above main content */
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity var(--transition-smooth);
+  position: fixed; /* Fixed position */
+  inset: 0; /* Full screen */
+  background-color: rgba(0, 0, 0, 0.7); /* Dark overlay */
+  backdrop-filter: blur(5px); /* Blur effect */
+  z-index: 9997; /* Layering */
+  opacity: 0; /* Hidden by default */
+  pointer-events: none; /* Disable interactions */
+  transition: opacity var(--transition-smooth); /* Fade effect */
 }
-
 .session-modal-overlay.visible {
-    opacity: 1;
-    pointer-events: auto;
+  opacity: 1; /* Show */
+  pointer-events: auto; /* Enable interactions */
 }
 
+/* --- Modal Container --- */
 .session-modal {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(0.9);
-    background-color: var(--color-bg-secondary);
-    border: 1px solid var(--color-border);
-    border-radius: 16px;
-    padding: 2rem;
-    z-index: 9998; /* Below cart drawer, above main content */
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity var(--transition-smooth), transform var(--transition-smooth), visibility var(--transition-smooth);
-    max-width: 600px;
-    width: 90%;
-    box-shadow: 0 10px 30px var(--color-shadow);
+  position: fixed; /* Fixed position */
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%) scale(0.9); /* Initial scale */
+  background-color: var(--color-bg-secondary); /* Background */
+  border: 1px solid var(--color-border); /* Border */
+  border-radius: 16px; /* Rounded corners */
+  padding: 2rem; /* Spacing */
+  z-index: 9998; /* Above overlay */
+  opacity: 0; /* Hidden by default */
+  visibility: hidden; /* Hidden by default */
+  transition: all var(--transition-smooth); /* Smooth transitions */
+  max-width: 600px; /* Max width */
+  width: 90%; /* Responsive width */
+  box-shadow: 0 10px 30px var(--color-shadow); /* Shadow */
 }
-
 .session-modal.visible {
-    opacity: 1;
-    visibility: visible;
-    transform: translate(-50%, -50%) scale(1);
+  opacity: 1; /* Show */
+  visibility: visible; /* Show */
+  transform: translate(-50%, -50%) scale(1); /* Normal scale */
 }
 
-.session-modal .modal-content {
-    position: relative;
-    padding: 0; /* Override default padding from homestyles.css */
-    background: none; /* Override default background */
-    border: none; /* Override default border */
-    box-shadow: none; /* Override default shadow */
-}
-
+/* Modal Content */
 .session-modal-title {
-    text-align: center;
-    margin-bottom: 1.5rem;
-    font-size: 1.8rem;
-    color: var(--color-text-light);
+  text-align: center; /* Center title */
+  margin-bottom: 1.5rem; /* Spacing */
+  font-size: 1.8rem; /* Large */
+  color: var(--color-text-light); /* Bright */
 }
-
 .close-session-modal-btn {
-    position: absolute;
-    top: 0;
-    right: 0;
-    background: none;
-    border: none;
-    color: var(--color-text-secondary);
-    font-size: 2rem;
-    cursor: pointer;
-    transition: color var(--transition-fast);
+  position: absolute; /* Position close button */
+  top: 0;
+  right: 0; /* Top right corner */
+  background: none;
+  border: none; /* Clean button */
+  color: var(--color-text-secondary); /* Muted */
+  font-size: 2rem; /* Large */
+  cursor: pointer; /* Pointer */
+  transition: color var(--transition-fast); /* Color transition */
 }
-
 .close-session-modal-btn:hover {
-    color: var(--color-text-light);
+  color: var(--color-text-light); /* Bright on hover */
 }
 
+/* Form Elements */
 .session-modal .form-group {
-    margin-bottom: 1.5rem;
+  margin-bottom: 1.5rem; /* Spacing */
 }
-
 .session-modal .form-label {
-    position: static; /* Override absolute positioning */
-    display: block;
-    margin-bottom: 0.8rem;
-    color: var(--color-text-secondary);
-    font-size: 1rem;
+  display: block; /* Block level */
+  margin-bottom: 0.8rem; /* Spacing */
+  color: var(--color-text-secondary); /* Muted */
+  font-size: 1rem; /* Normal */
 }
 
-.day-options, .time-options {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.75rem;
-    justify-content: center; /* Center the options */
+/* Day/Time Options */
+.day-options,
+.time-options {
+  display: flex; /* Flex layout */
+  flex-wrap: wrap; /* Wrap items */
+  gap: 0.75rem; /* Spacing */
+  justify-content: center; /* Center items */
+}
+.day-option,
+.time-option {
+  display: inline-flex; /* Flex layout */
+  align-items: center; /* Center vertically */
+  background-color: var(--color-bg-dark); /* Dark bg */
+  border: 1px solid var(--color-border); /* Border */
+  border-radius: 8px; /* Rounded */
+  padding: 0.75rem 1.25rem; /* Spacing */
+  cursor: pointer; /* Pointer */
+  transition: all var(--transition-fast); /* Smooth transitions */
+  color: var(--color-text-secondary); /* Muted */
+  font-size: 0.95rem; /* Slightly smaller */
+}
+.day-option:hover,
+.time-option:hover {
+  background-color: rgba(255, 255, 255, 0.05); /* Light hover */
+  border-color: var(--color-accent); /* Accent border */
+  color: var(--color-text-light); /* Bright text */
 }
 
-.day-option, .time-option {
-    display: inline-flex;
-    align-items: center;
-    background-color: var(--color-bg-dark);
-    border: 1px solid var(--color-border);
-    border-radius: 8px;
-    padding: 0.75rem 1.25rem;
-    cursor: pointer;
-    transition: all var(--transition-fast);
-    color: var(--color-text-secondary); /* Default text color */
-    font-size: 0.95rem;
-}
-
-.day-option:hover, .time-option:hover {
-    background-color: rgba(255, 255, 255, 0.05);
-    border-color: var(--color-accent);
-    color: var(--color-text-light);
-}
-
+/* Hide native inputs */
 .day-option input[type="checkbox"],
 .time-option input[type="radio"] {
-    display: none; /* Hide native checkbox/radio */
+  display: none; /* Hide */
 }
 
-/* --- START CHANGES FOR HIGHLIGHTING THE BOX BORDER AND BACKGROUND --- */
-/* Apply checked state styles to the parent label (.day-option, .time-option) */
+/* Selected State */
 .day-option:has(input[type="checkbox"]:checked),
 .time-option:has(input[type="radio"]:checked) {
-    background-color: var(--color-accent); /* Highlight the entire box background */
-    color: var(--color-bg-dark);           /* Change text color for contrast */
-    border-color: var(--color-accent);     /* Highlight the box border */
-    font-weight: 700;                      /* Bold text */
+  background-color: var(--color-accent); /* Accent bg */
+  color: var(--color-bg-dark); /* Dark text */
+  border-color: var(--color-accent); /* Accent border */
+  font-weight: 700; /* Bold */
 }
 
-/* Ensure the span's text color follows the parent's, no need for separate span rule for checked state */
-.day-option span, .time-option span {
-    display: block;
-    pointer-events: none; /* Allow click on parent label */
-}
-/* --- END CHANGES --- */
-
-
+/* Time Selection Group */
 .time-selection-group {
-    margin-bottom: 1.5rem;
-    border: 1px solid var(--color-border);
-    border-radius: 8px;
-    padding: 1rem;
-    background-color: rgba(0,0,0,0.1);
+  margin-bottom: 1.5rem; /* Spacing */
+  border: 1px solid var(--color-border); /* Border */
+  border-radius: 8px; /* Rounded */
+  padding: 1rem; /* Spacing */
+  background-color: rgba(0, 0, 0, 0.1); /* Slightly darker */
 }
-
 .time-selection-group h4 {
-    color: var(--color-accent);
-    font-size: 1.1rem;
-    margin-bottom: 1rem;
-    text-align: center;
+  color: var(--color-accent); /* Accent */
+  font-size: 1.1rem; /* Slightly larger */
+  margin-bottom: 1rem; /* Spacing */
+  text-align: center; /* Center */
 }
 
-/* Error message styling for modal */
+/* Error Message */
 .session-modal .error-message {
-    text-align: center;
-    margin-top: 0.5rem;
-    margin-bottom: 1rem;
+  text-align: center; /* Center */
+  margin-top: 0.5rem; /* Spacing */
+  margin-bottom: 1rem; /* Spacing */
 }
 
+/* Mobile Styles */
 @media (max-width: 576px) {
-    .session-modal {
-        padding: 1.5rem;
-    }
-    .day-option, .time-option {
-        padding: 0.6rem 1rem;
-        font-size: 0.9rem;
-    }
+  .session-modal {
+    padding: 1.5rem; /* Less padding */
+  }
+  .day-option,
+  .time-option {
+    padding: 0.6rem 1rem; /* Less padding */
+    font-size: 0.9rem; /* Smaller */
+  }
 }
-/* --- END Session Modal Styles --- */

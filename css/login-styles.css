@@ -1,6 +1,40 @@
-.login-page-container { display: flex; align-items: center; justify-content: center; min-height: 100vh; padding: calc(var(--header-height) + 4rem) 1rem 4rem; }
-.login-subtitle { text-align: center; color: var(--color-text-secondary); margin: -2rem 0 3rem; }
-.register-prompt { text-align: center; margin-top: 2rem; color: var(--color-text-secondary); }
-.register-prompt a { color: var(--color-accent); font-weight: 500; text-decoration: none; transition: color var(--transition-fast); }
-.register-prompt a:hover { color: var(--color-text-light); text-decoration: underline; }
-#form-error { color: #ff6b6b; font-size: 0.9rem; text-align: center; min-height: 1.2rem; margin-top: -1rem; margin-bottom: 1rem; }
+.login-page-container {
+  display: flex;
+  align-items: center; /* Vertical center */
+  justify-content: center; /* Horizontal center */
+  min-height: 100vh; /* Full viewport */
+  padding: calc(var(--header-height) + 4rem) 1rem 4rem; /* Account for header */
+}
+
+.login-subtitle {
+  text-align: center; /* Center text */
+  color: var(--color-text-secondary); /* Subdued color */
+  margin: -2rem 0 3rem; /* Tight top, space below */
+}
+
+.register-prompt {
+  text-align: center; /* Center text */
+  margin-top: 2rem; /* Spacing */
+  color: var(--color-text-secondary); /* Subdued */
+}
+
+.register-prompt a {
+  color: var(--color-accent); /* Brand color */
+  font-weight: 500; /* Medium weight */
+  text-decoration: none; /* No underline */
+  transition: color var(--transition-fast); /* Smooth color change */
+}
+
+.register-prompt a:hover {
+  color: var(--color-text-light); /* Light on hover */
+  text-decoration: underline; /* Underline on hover */
+}
+
+#form-error {
+  color: #ff6b6b; /* Error red */
+  font-size: 0.9rem; /* Small text */
+  text-align: center; /* Centered */
+  min-height: 1.2rem; /* Prevent layout shift */
+  margin-top: -1rem; /* Pull up */
+  margin-bottom: 1rem; /* Space below */
+}
